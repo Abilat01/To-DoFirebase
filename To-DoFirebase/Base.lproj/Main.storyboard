@@ -12,12 +12,12 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="To_DoFirebase" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIScrollView">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="3M3-Rm-6Yi">
-                                <rect key="frame" x="40" y="243" width="334" height="420"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="3M3-Rm-6Yi">
+                                <rect key="frame" x="40" y="134" width="334" height="480"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="SMQ-dQ-iXs">
                                         <rect key="frame" x="36" y="0.0" width="262" height="136"/>
@@ -37,7 +37,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sKN-Zp-g2M">
-                                        <rect key="frame" x="0.0" y="196" width="334" height="80"/>
+                                        <rect key="frame" x="0.0" y="226" width="334" height="80"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyV-ZJ-Civ">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
@@ -58,7 +58,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PSV-GI-rNk">
-                                        <rect key="frame" x="40" y="336" width="254" height="84"/>
+                                        <rect key="frame" x="40" y="396" width="254" height="84"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfY-9r-guw">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="38"/>
@@ -102,12 +102,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="3M3-Rm-6Yi" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="NpG-8A-wRZ"/>
-                            <constraint firstItem="3M3-Rm-6Yi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="O9J-0g-TJL"/>
+                            <constraint firstItem="3M3-Rm-6Yi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="Pcz-xl-N45"/>
                             <constraint firstItem="3M3-Rm-6Yi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="PjL-p2-I4p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3M3-Rm-6Yi" secondAttribute="trailing" constant="40" id="fI8-wv-vMO"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aLv-PK-bkm" appends="YES" id="jDv-8q-mvU"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="loginTF" destination="zyV-ZJ-Civ" id="xR3-SN-iRs"/>
@@ -116,6 +119,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aLv-PK-bkm">
+                    <connections>
+                        <action selector="tapGR:" destination="BYZ-38-t0r" id="2kb-vQ-bXn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="139" y="94"/>
         </scene>

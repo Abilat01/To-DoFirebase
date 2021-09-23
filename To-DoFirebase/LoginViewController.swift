@@ -17,22 +17,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
-        
-    }
-    
-    @objc func kbDidShow(notification: Notification) {
-        
-        guard let userInfo = notification.userInfo else { return }
-        let kbFrameSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        
-        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.height + kbFrameSize.height)
-        
-    }
-    
-    @objc func kbDidHide() {
-        
     }
     
     
@@ -42,6 +26,11 @@ class LoginViewController: UIViewController {
     @IBAction func registerTapped(_ sender: UIButton) {
     }
     
+    //скрыть клавиатуру по нажатию
+    @IBAction func tapGR(_ sender: UITapGestureRecognizer) {
+        loginTF.resignFirstResponder()
+        passwordTF.resignFirstResponder()
+    }
     
 }
 
