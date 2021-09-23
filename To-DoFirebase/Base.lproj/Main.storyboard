@@ -68,6 +68,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lhe-Zw-V17"/>
                                                     <segue destination="IuE-83-SNA" kind="presentation" modalPresentationStyle="fullScreen" id="FYX-Yd-ZyU"/>
                                                 </connections>
                                             </button>
@@ -78,6 +79,9 @@
                                                 <state key="normal" title="Register">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="registerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NOn-JB-ONl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -105,6 +109,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3M3-Rm-6Yi" secondAttribute="trailing" constant="40" id="fI8-wv-vMO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTF" destination="zyV-ZJ-Civ" id="xR3-SN-iRs"/>
+                        <outlet property="passwordTF" destination="7HP-DD-W5b" id="zD5-os-QHd"/>
+                        <outlet property="warnLabel" destination="10H-oP-U7e" id="e2P-1N-vW2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +122,7 @@
         <!--Tasks-->
         <scene sceneID="q4O-uT-qmY">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="9Zz-tv-yyp" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="9Zz-tv-yyp" customClass="TasksViewController" customModule="To_DoFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RKt-Ue-sbA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,6 +141,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Zz-tv-yyp" id="7cE-Qj-Hgh"/>
+                                    <outlet property="delegate" destination="9Zz-tv-yyp" id="2e4-fI-FO8"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3pq-q2-8ZY"/>
@@ -144,8 +157,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="W3R-9t-Bbd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="N9H-h7-2BY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="N9H-h7-2BY">
+                            <connections>
+                                <action selector="newTasksTapped:" destination="9Zz-tv-yyp" id="fN2-SH-tmc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Hh3-Lp-KXP" id="Jxc-kl-kUJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IcO-Js-vLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
