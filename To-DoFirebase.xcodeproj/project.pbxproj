@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		3BC50FA726FC878E00D578FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC50FA626FC878E00D578FA /* AppDelegate.swift */; };
 		3BC50FA926FC878E00D578FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC50FA826FC878E00D578FA /* SceneDelegate.swift */; };
-		3BC50FAB26FC878E00D578FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC50FAA26FC878E00D578FA /* ViewController.swift */; };
+		3BC50FAB26FC878E00D578FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC50FAA26FC878E00D578FA /* LoginViewController.swift */; };
 		3BC50FAE26FC878E00D578FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC50FAC26FC878E00D578FA /* Main.storyboard */; };
 		3BC50FB126FC878E00D578FA /* To_DoFirebase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BC50FAF26FC878E00D578FA /* To_DoFirebase.xcdatamodeld */; };
 		3BC50FB326FC878F00D578FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC50FB226FC878F00D578FA /* Assets.xcassets */; };
 		3BC50FB626FC878F00D578FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC50FB426FC878F00D578FA /* LaunchScreen.storyboard */; };
 		3BC50FC126FC878F00D578FA /* To_DoFirebaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC50FC026FC878F00D578FA /* To_DoFirebaseTests.swift */; };
 		3BC50FCC26FC878F00D578FA /* To_DoFirebaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC50FCB26FC878F00D578FA /* To_DoFirebaseUITests.swift */; };
+		3BF56BAF26FCBD8000583575 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF56BAE26FCBD8000583575 /* TasksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		3BC50FA326FC878E00D578FA /* To-DoFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-DoFirebase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC50FA626FC878E00D578FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BC50FA826FC878E00D578FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3BC50FAA26FC878E00D578FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3BC50FAA26FC878E00D578FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3BC50FAD26FC878E00D578FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BC50FB026FC878E00D578FA /* To_DoFirebase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = To_DoFirebase.xcdatamodel; sourceTree = "<group>"; };
 		3BC50FB226FC878F00D578FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		3BC50FC726FC878F00D578FA /* To-DoFirebaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "To-DoFirebaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC50FCB26FC878F00D578FA /* To_DoFirebaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_DoFirebaseUITests.swift; sourceTree = "<group>"; };
 		3BC50FCD26FC878F00D578FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BF56BAE26FCBD8000583575 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +105,9 @@
 			children = (
 				3BC50FA626FC878E00D578FA /* AppDelegate.swift */,
 				3BC50FA826FC878E00D578FA /* SceneDelegate.swift */,
-				3BC50FAA26FC878E00D578FA /* ViewController.swift */,
+				3BC50FAA26FC878E00D578FA /* LoginViewController.swift */,
 				3BC50FAC26FC878E00D578FA /* Main.storyboard */,
+				3BF56BAE26FCBD8000583575 /* TasksViewController.swift */,
 				3BC50FB226FC878F00D578FA /* Assets.xcassets */,
 				3BC50FB426FC878F00D578FA /* LaunchScreen.storyboard */,
 				3BC50FB726FC878F00D578FA /* Info.plist */,
@@ -262,7 +265,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC50FB126FC878E00D578FA /* To_DoFirebase.xcdatamodeld in Sources */,
-				3BC50FAB26FC878E00D578FA /* ViewController.swift in Sources */,
+				3BC50FAB26FC878E00D578FA /* LoginViewController.swift in Sources */,
+				3BF56BAF26FCBD8000583575 /* TasksViewController.swift in Sources */,
 				3BC50FA726FC878E00D578FA /* AppDelegate.swift in Sources */,
 				3BC50FA926FC878E00D578FA /* SceneDelegate.swift in Sources */,
 			);
