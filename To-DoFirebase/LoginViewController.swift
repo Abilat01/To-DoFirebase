@@ -14,14 +14,25 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         warnLabel.alpha = 0
         
+        Auth.auth().addStateDidChangeListener( { [weak self] (auth, user) in
+            if user != nil {
+                self?.performSegue(withIdentifier: "MainSegue", sender: nil)
+            }
+        })
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loginTF.text = ""
+        passwordTF.text = ""
+        
+    }
     
     @IBAction func loginTapped(_ sender: UIButton) {
         
@@ -40,12 +51,8 @@ class LoginViewController: UIViewController {
                 self?.performSegue(withIdentifier: "MainSegue", sender: nil)
                 return
             }
-            
             self?.displayWarningLabel(withText: "No such user")
         })
-        
-        
-        
     }
     
     func displayWarningLabel(withText text: String) {
@@ -56,7 +63,6 @@ class LoginViewController: UIViewController {
                        }) { [weak self] complite in
             self?.warnLabel.alpha = 1
         }
-        
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {
@@ -66,21 +72,22 @@ class LoginViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: login, password: password) { [weak self] (user, error) in
+        Auth.auth().createUser(withEmail: login, password: password) { (user, error) in
             if error == nil {
                 if user != nil {
-                    self?.performSegue(withIdentifier: "MainSegue", sender: nil)
+                    
+                } else {
+                    print("user is not created")
                 }
+            } else {
+                print(error?.localizedDescription as Any)
             }
         }
-        
     }
-    
+
     //скрыть клавиатуру по нажатию
     @IBAction func tapGR(_ sender: UITapGestureRecognizer) {
         loginTF.resignFirstResponder()
         passwordTF.resignFirstResponder()
     }
-    
 }
-

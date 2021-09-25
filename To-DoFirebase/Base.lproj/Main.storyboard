@@ -165,6 +165,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="W3R-9t-Bbd">
+                        <barButtonItem key="leftBarButtonItem" title="Sing out" id="7M7-dj-Roe">
+                            <connections>
+                                <action selector="singOutTapped:" destination="9Zz-tv-yyp" id="pVA-Y6-Ygd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="N9H-h7-2BY">
                             <connections>
                                 <action selector="newTasksTapped:" destination="9Zz-tv-yyp" id="fN2-SH-tmc"/>

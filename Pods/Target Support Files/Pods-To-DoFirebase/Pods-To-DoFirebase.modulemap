@@ -1,0 +1,6 @@
+framework module Pods_To_DoFirebase {
+  umbrella header "Pods-To-DoFirebase-umbrella.h"
+
+  export *
+  module * { export * }
+}
