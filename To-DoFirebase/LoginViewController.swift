@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -17,13 +18,62 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        warnLabel.alpha = 0
+        
     }
     
     
     @IBAction func loginTapped(_ sender: UIButton) {
+        
+        guard let login = loginTF.text, let password = passwordTF.text, login != "", password != "" else {
+            displayWarningLabel(withText: "Info is incorect")
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: login, password: password, completion: { [weak self] (user, error) in
+            if error != nil {
+                self?.displayWarningLabel(withText: "Error occured")
+                return
+            }
+            
+            if user != nil {
+                self?.performSegue(withIdentifier: "MainSegue", sender: nil)
+                return
+            }
+            
+            self?.displayWarningLabel(withText: "No such user")
+        })
+        
+        
+        
+    }
+    
+    func displayWarningLabel(withText text: String) {
+        
+        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1,options: .curveEaseIn,
+                       animations: {[weak self] in
+                        self?.warnLabel.alpha = 1
+                       }) { [weak self] complite in
+            self?.warnLabel.alpha = 1
+        }
+        
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {
+        
+        guard let login = loginTF.text, let password = passwordTF.text, login != "", password != "" else {
+            displayWarningLabel(withText: "Info is incorect")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: login, password: password) { [weak self] (user, error) in
+            if error == nil {
+                if user != nil {
+                    self?.performSegue(withIdentifier: "MainSegue", sender: nil)
+                }
+            }
+        }
+        
     }
     
     //скрыть клавиатуру по нажатию
